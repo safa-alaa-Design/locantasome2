@@ -1,0 +1,309 @@
+@using Restaurant.Models
+@using Microsoft.AspNetCore.Http;
+@using Microsoft.EntityFrameworkCore;
+@using Restaurant.AppServices;
+
+
+
+@inject ITextLocalizer Localizer
+<!DOCTYPE html>
+<html>
+<head>
+
+    @Html.ScriptBundle("Base")
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--
+    Victory HTML CSS Template
+    https://templatemo.com/tm-507-victory
+    -->
+    <title>Victory HTML CSS Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="~/cartshoping/css/cartstyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Locanta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Locanta/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="~/Locanta/css/fontAwesome.css">
+    <link rel="stylesheet" href="~/Locanta/css/hero-slider.css">
+    <link rel="stylesheet" href="~/Locanta/css/owl-carousel.css">
+    <link rel="stylesheet" href="~/Locanta/css/templatemo-style.css">
+    <link href="~/cartshoping/css/searchstyle.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <script src="~/Locanta/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <a asp-action="IndexHome" asp-controller="Home" class="navbar-brand scroll-top">LOGO</a>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                 
+                </div>
+                <!--/.navbar-header-->
+                <div>
+                    <ul class="user">
+
+                        @if (User.IsLoggedIn())
+                        {
+                            <li>
+                                <div class="dropdown">
+                                    <a href="javascript:;" class="s-sidebar-header-link s-user-profile-link"
+                                       data-bs-toggle="dropdown" title="@User?.Identity?.Name">
+                                        <i class="fa fa-user"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-end s-user-profile-menu">
+                                        <div class="s-user-card p-1 mb-2 text-center border-bottom">
+                                            <h2 class="s-user-avatar fs-1 mb-0">
+                                                <i class="fa fa-user"></i>
+                                            </h2>
+                                            <p class="s-user-info fs-6 mb-1">
+                                                @Context.User?.Identity?.Name
+                                            </p>
+                                        </div>
+                                        <a class="dropdown-item" href="~/Account/ChangePassword">
+                                            <em class="icon fa fa-key"></em><span>Change Password</span>
+                                        </a>
+                                        <a class="dropdown-item" href="~/Account/Signout">
+                                            <em class="icon fa fa-sign-out-alt"></em><span> @Localizer.Get("Navigation.LogoutLink")</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+
+                            <li>
+                                <div class="dropdown">
+                                    <a href="javascript:;" class="s-sidebar-header-link s-user-profile-link"
+                                       data-bs-toggle="dropdown" title="@User?.Identity?.Name">
+                                        <i class="fa fa-user"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-end s-user-profile-menu">
+                                        <div class="s-user-card p-1 mb-2 text-center border-bottom">
+                                            <h2 class="s-user-avatar fs-1 mb-0">
+                                                <i class="fa fa-user"></i>
+                                            </h2>
+                                            <p class="s-user-info fs-6 mb-1">
+                                                @Context.User?.Identity?.Name
+                                            </p>
+                                        </div>
+                                        <a class="dropdown-item" href="~/Account/ChangePassword">
+                                            <em class="icon fa fa-key"></em><span>Change Password</span>
+                                        </a>
+                                        <a class="dropdown-item" href="~/Account/Signout">
+                                            <em class="icon fa fa-sign-out-alt"></em><span> @Localizer.Get("SignUp")</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                        }
+
+                        <li>
+                            <div class="dropdown">
+                                <a href="javascript:;" class="s-sidebar-header-link s-language-selection-link"
+                                   data-bs-toggle="dropdown" title="switch language">
+                                    <i class="fa fa-language"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end s-language-selection-menu">
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+
+                            <a>
+                                <i id="cartToggleBtn" class="fa fa-shopping-cart"></i>
+                        </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-action="IndexHome" asp-controller="Home">@Localizer.Get("Home")</a></li>
+                        <li><a asp-action="Index" asp-controller="OurMenus">@Localizer.Get("Our Menus")</a></li>
+                        
+                        @{
+                            locantaContext db = new locantaContext();
+
+                            var user = db.Users.Include(x => x.UserRoles).ThenInclude(x => x.Role).ToList();
+                        }
+                        @if (User.IsLoggedIn())
+                        {
+                            var loggedInUser = user.FirstOrDefault(u => u.Username == User.Identity.Name);
+                            if (loggedInUser != null && loggedInUser.UserRoles.Any(ur => ur.Role.RoleName == "Admin"))
+                            {
+                                <li><a href="~/">@Localizer.Get("Admin panel")</a></li>
+                            }
+                        }
+
+
+
+                
+                    </ul>
+                  
+                   
+                </div>
+
+              
+                <!--/.navbar-collapse-->
+           </nav>
+            <!--/.navbar-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.header-->
+
+
+    <!--cart-->
+
+    <div class="mini_cart">
+        <div class="cart_gallery">
+            <div class="cart_close">
+                <div class="cart_text">
+                    <h3>@Localizer.Get("cart")</h3>
+                    <div class="mini_cart_close">
+                        <!-- أيقونة "X" لإغلاق السلة -->
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="mini_cart_close" style="margin-left: 250px;">
+                    <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
+                </div>
+                <hr />
+            </div>
+            <div class="cart-items">
+                <!-- اضافة عناصر السلة هنا -->
+            </div>
+            <hr />
+            <div class="cart-total">
+                <strong class="cart-total-title">@Localizer.Get("Sub total"):</strong>
+                <span class="cart-total-price" style="font-size: large; font-weight: bolder;">$0</span>
+            </div>
+        </div>
+
+        <button id="whatsapp-button" style="margin-top: 50px;width: 100%;height: 60px;background-color: #22ad3d;color: white;font-size: 22px;border: 0;">
+            @Localizer.Get("Send via WhatsApp")
+        </button>
+    </div>
+    @RenderBody()
+
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="~/Locanta/js/vendor/bootstrap.min.js"></script>
+
+    <script src="~/Locanta/js/plugins.js"></script>
+    <script src="~/Locanta/js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // navigation click actions
+            $('.scroll-link').on('click', function (event) {
+                event.preventDefault();
+                var sectionID = $(this).attr("data-id");
+                scrollToID('#' + sectionID, 750);
+            });
+            // scroll to top action
+            $('.scroll-top').on('click', function (event) {
+                event.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
+            // mobile nav toggle
+            $('#nav-toggle').on('click', function (event) {
+                event.preventDefault();
+                $('#main-nav').toggleClass("open");
+            });
+        });
+        // scroll function
+        function scrollToID(id, speed) {
+            var offSet = 0;
+            var targetOffset = $(id).offset().top - offSet;
+            var mainNav = $('#main-nav');
+            $('html,body').animate({ scrollTop: targetOffset }, speed);
+            if (mainNav.hasClass("open")) {
+                mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+                mainNav.removeClass("open");
+            }
+        }
+        if (typeof console === "undefined") {
+            console = {
+                log: function () { }
+            };
+        }
+    </script>
+
+    <!--cart-->
+    <script src="~/cartshoping/cartjs.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var cartToggleBtn = document.getElementById("cartToggleBtn");
+            var miniCart = document.querySelector(".mini_cart");
+
+            // إضافة استماع للنقر على زر السلة
+            cartToggleBtn.addEventListener("click", function () {
+                miniCart.classList.toggle("active"); // تبديل حالة السلة بين فتح وإغلاق
+            });
+
+            // إضافة استماع للنقر على زر إغلاق السلة داخل السلة نفسها
+            document.querySelector(".mini_cart_close").addEventListener("click", function () {
+                miniCart.classList.remove("active"); // إغلاق السلة عند النقر على زر الإغلاق
+            });
+        });
+
+        $(document).ready(function () {
+            // إضافة استماع للنقر على زر الإغلاق داخل السلة
+            $(".mini_cart_close").click(function () {
+                // إغلاق السلة عند النقر على زر الإغلاق داخل السلة
+                $(".mini_cart").removeClass("active");
+            });
+        });
+
+    </script>
+    <script src="~/cartshoping/cartjs.js"></script>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>@Localizer.Get("Copyright &copy");2024 @Localizer.Get("Template") </p>
+                </div>
+                @{
+                    var brands = db.Brands.ToList();
+                    ViewBag.Brands = brands;
+                }
+                @foreach (var brand in ViewBag.Brands)
+                {
+                    <div class="col-md-4">
+                        <ul class="social-icons">
+                            <li><a target="_blank" href="@brand.FaceBook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="@brand.Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="@brand.WhtasApp"><i class="fa fa-whatsapp"></i></a></li>
+                            <li><a href="@brand.Telegram"><i class="fa fa-telegram"></i></a></li>
+                            <li><a href="@brand.Instagram"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+
+                }
+                <div class="col-md-4">
+                    <p>@Localizer.Get("Design"): <a href="#">@Localizer.Get("Alaa Shahror/Safa Elhasan")</a></p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

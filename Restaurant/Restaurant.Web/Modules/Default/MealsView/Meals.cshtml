@@ -1,0 +1,156 @@
+@using Microsoft.EntityFrameworkCore;
+@using Restaurant.Models;
+@model List<Restaurant.Models.Item>
+@inject ITextLocalizer Localizer
+
+
+@*
+
+*@
+@{
+    Layout = "_myNewLayout";
+}
+
+<link href="~/cartshoping/css/searchstyle.css" rel="stylesheet" />
+<style>
+    /* تنسيق عام */
+    .container {
+        padding: 20px;
+        height: auto;
+    }
+
+    .shop_gallery {
+        margin-top: 20px;
+    }
+
+    /* تنسيق العنصر الفردي */
+    .single_product {
+        
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 227px;
+        box-sizing: content-box;
+        padding-bottom: 10px;
+    }
+
+    /* تنسيق الصورة */
+    .product_thumb img {
+        width: 100%;
+        height: 128px;
+        display: block;
+    }
+
+    
+
+    /* تنسيق اسم المنتج */
+    .title {
+        font-size: 19px;
+        color: #474545;
+    }
+
+    /* تنسيق السعر */
+    .h3 {
+        font-size: 16px;
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    /* تنسيق السعر السابق */
+    .cart-price2 s {
+        color: red;
+    }
+
+    .product_content {
+        margin-left: 12px;
+    }
+
+    h2, h3, h6 {
+        margin-top: -2px;
+        margin-bottom: 9px;
+    }
+
+
+
+    .product_details_title {
+        display: flex;
+    }
+
+</style>
+
+
+<div class="container">
+    <div class="shop_gallery" >
+        <div class="row" style="text-align:center; margin-bottom:40px;">
+            @foreach (var meal in ViewBag.Meals)
+            {
+                <div class="col-md-6">
+                    <img style="width:100%; height: auto;" class="productimgbig shop-item-image" src="/upload/@meal.Photo" alt="">
+                    <div class="product_content product_details">
+                        <h3 class="Categoryitem shop-item-category">@meal.MealsName</h3>
+                        @foreach (var brand in ViewBag.Brands)
+                        {
+                            <p class="shop-item-tel product_description" style="display:none;">@brand.PhoneNember</p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+            <div class="row itemrow">
+                @foreach (var viewModel in Model)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 itemcolum">
+                        <article class="single_product single_productrow">
+                            <figure>
+                                <div class="product_thumb product_details_title">
+                                    @if (!string.IsNullOrEmpty(viewModel.Photo))
+                                    {
+                                        <img style="width:100%; height: 128px; margin-bottom: 10px;" class="productimg" src="/upload/@viewModel.Photo" alt="">
+                                    }
+                                </div>
+                                <figcaption class="product_content">
+                                <h2 class="title shop-item-name">@Localizer.Get(viewModel.ItemName)</h2>
+                             
+                                <h6 class="title2">@Localizer.Get(viewModel.Description)</h6>
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                }
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="shop-item-details">
+                        @foreach (var meal in ViewBag.Meals)
+                        {
+                            <h3 class="shop-item-price  priceminu">@meal.Price <span class="shop-item-currency currencyitem">@meal.Currency</span></h3>
+                            @if (meal.PriceBefor != null)
+                            {
+                                <h3 class="PriceBefor">
+                                    <s style="color:#800000;">@meal.PriceBefor</s> <span class="Currencybefore" style="color:#800000;">@meal.Currency</span>
+                                   
+                                </h3>
+                            }
+                            <div style="margin:0" class="product_variant_quantity d-flex align-items-center bottundiv">
+                                @if (User.IsLoggedIn())
+                                {
+                                    <button class=" shop-item-button" type="button">@Localizer.Get("Add To Cart")</button>
+                                }
+                                else
+                                {
+                                    <a class=" shop-item-button" href="~/Account/SignUp" type="button">@Localizer.Get("Add To Cart")</a>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+

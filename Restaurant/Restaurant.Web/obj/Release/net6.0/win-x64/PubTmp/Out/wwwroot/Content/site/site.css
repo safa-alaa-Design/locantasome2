@@ -1,0 +1,322 @@
+.s-site-logo-img {
+  content: url(images/pngwing.com.png);
+  background-color: aliceblue;
+}
+
+
+.s-container-tight {
+  max-width: 48rem;
+}
+
+.s-Panel {
+  background-color: #fff;
+  border: 1px solid #87CEFA;
+  box-shadow: 0 0px 100px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#LoginPanel0_Form {
+  height: 224px;
+}
+
+#LoginPanel0_Username {
+  height: 30px;
+}
+
+.text-center {
+  color: #373737
+}
+
+.s-Form label.caption {
+  color: #303030
+}
+
+#ForgotPasswordPanel0_Email {
+  height: 30px;
+}
+
+#LoginPanel0_Password {
+  height: 30px;
+}
+
+.float-end {
+  margin-right: -150px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  .float-end {
+    margin-right: -140px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .float-end {
+    margin-right: -120px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .float-end {
+    margin-right: -120px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .float-end {
+    margin-right: -110px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .float-end {
+    margin-right: -60px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .float-end {
+    margin-right: -10px;
+    font-size: 10px;
+  }
+
+  .s-Panel {
+    width: 86%;
+  }
+
+  .px-field {
+    width: 140px;
+  }
+}
+
+#SignUpPanel0_SubmitButton {
+  appearance: none;
+  background-color: #f2745f;
+  border-radius: 6px;
+  border-style: none;
+  box-shadow: #f2745f 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  transition: all .15s;
+}
+
+  #SignUpPanel0_SubmitButton:hover {
+    background-color: #87CEFA;
+    box-shadow: #063A62 0 -6px 8px inset;
+    transform: scale(1.125);
+  }
+
+  #SignUpPanel0_SubmitButton:active {
+    transform: scale(1.025);
+  }
+
+@media (min-width: 768px) {
+  #SignUpPanel0_SubmitButton {
+    font-size: 1.1rem;
+    padding: .75rem 2rem;
+  }
+}
+
+#ForgotPasswordPanel0_SubmitButton {
+  appearance: none;
+  background-color: #f2745f;
+  border-radius: 6px;
+  border-style: none;
+  box-shadow: #f2745f 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  transition: all .15s;
+}
+
+  #ForgotPasswordPanel0_SubmitButton:hover {
+    background-color: #87CEFA;
+    box-shadow: #063A62 0 -6px 8px inset;
+    transform: scale(1.125);
+  }
+
+  #ForgotPasswordPanel0_SubmitButton:active {
+    transform: scale(1.025);
+  }
+
+@media (min-width: 768px) {
+  #ForgotPasswordPanel0_SubmitButton {
+    font-size: 1.1rem;
+    padding: .75rem 2rem;
+  }
+}
+
+
+
+
+#LoginPanel0_LoginButton {
+  appearance: none;
+  background-color: #f2745f;
+  border-radius: 6px;
+  border-style: none;
+  box-shadow: #f2745f 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  transition: all .15s;
+}
+
+  #LoginPanel0_LoginButton:hover {
+    background-color: #87CEFA;
+    box-shadow: #063A62 0 -6px 8px inset;
+    transform: scale(1.125);
+  }
+
+  #LoginPanel0_LoginButton:active {
+    transform: scale(1.025);
+  }
+
+@media (min-width: 768px) {
+  #LoginPanel0_LoginButton {
+    font-size: 1.1rem;
+    padding: .75rem 2rem;
+  }
+}
+
+.px-field {
+  width: 200px;
+  margin: auto;
+}
+
+.s-Form .field {
+  padding: 7px 3px;
+}
+
+.s-full-page {
+  min-height: 83vh;
+}
+
+.s-Administration-LanguageDialog > .size {
+  width: 450px;
+}
+
+.s-Administration-LanguageDialog .caption {
+  width: 120px;
+}
+
+.s-Administration-RoleDialog > .size {
+  width: 450px;
+}
+
+.s-Administration-RoleDialog .caption {
+  width: 120px;
+}
+
+.s-Administration-UserDialog > .size {
+  width: 650px;
+}
+
+.s-Administration-UserDialog .caption {
+  width: 150px;
+}
+
+.s-Administration-UserDialog .s-PropertyGrid .categories {
+  height: 450px;
+}
+
+.s-TranslationGrid input.custom-text {
+  width: 100%;
+  height: 23px;
+  padding: 0 3px;
+}
+
+.s-UserPermissionDialog > .size,
+.s-RolePermissionDialog > .size,
+.s-UserRoleDialog > .size {
+  min-width: 670px;
+  width: 670px;
+  min-height: 450px;
+  height: 450px;
+}
+
+.s-UserPermissionDialog .s-DataGrid,
+.s-RolePermissionDialog .s-DataGrid,
+.s-UserRoleDialog .s-DataGrid {
+  height: 100%;
+}
+
+.s-UserPermissionDialog .ui-dialog-content,
+.s-RolePermissionDialog .ui-dialog-content,
+.s-UserRoleDialog .ui-dialog-content {
+  padding: 8px;
+}
+
+.s-PermissionCheckEditor .check-box {
+  background-image: url(../serenity/images/tick-empty.png);
+  background-position: center center;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+}
+
+  .s-PermissionCheckEditor .check-box.checked {
+    background-image: url(../serenity/images/tick-green.png);
+    background-position: center center;
+  }
+
+    .s-PermissionCheckEditor .check-box.checked.revoke {
+      background-image: url(../serenity/images/tick-red.png);
+      background-position: center center;
+    }
+
+  .s-PermissionCheckEditor .check-box.partial {
+    opacity: 0.8;
+  }
+
+  .s-PermissionCheckEditor .check-box.checked.partial {
+    background-image: url(images/tick-green-partial.png);
+  }
+
+  .s-PermissionCheckEditor .check-box.checked.revoke.partial {
+    background-image: url(images/tick-red-partial.png);
+  }
+
+.s-PermissionCheckEditor .effective-permission {
+  cursor: default;
+  padding-left: 22px;
+  background-image: url(../serenity/images/check2.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+  .s-PermissionCheckEditor .effective-permission.partial {
+    background-image: url(../serenity/images/checkbox-null.png);
+  }
+
+  .s-PermissionCheckEditor .effective-permission.deny {
+    background-image: url(../serenity/images/slash.png);
+  }

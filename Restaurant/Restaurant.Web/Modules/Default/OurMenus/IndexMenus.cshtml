@@ -1,0 +1,188 @@
+@using Microsoft.EntityFrameworkCore
+@using Restaurant.Models
+@model List<Restaurant.Models.Product>
+
+@{
+    Layout = "_myNewLayout";
+}
+@inject ITextLocalizer Localizer
+
+
+
+    <title>Restaurant Menu</title>
+    
+<link href="~/cartshoping/css/indexmeals.css" rel="stylesheet" />
+
+
+    
+<div class="container container1">
+    <h2 class="section-title">@Localizer.Get("Menu") - @Localizer.Get("Meals") </h2>
+    <div class="menu-section menu-section2">
+        @{
+
+            locantaContext db = new locantaContext();
+            var CategoryMeals = db.CategoryMeals.Include(x => x.Meals);
+        }
+        @foreach (var catMeals in CategoryMeals)
+        {
+            <ul class="menu-items1">
+                <li class="category">
+                    @Localizer.Get(catMeals.CategoryMealsName)
+                    @foreach (var meal in catMeals.Meals)
+                    {
+                        <ul class="sub-items ">
+                            <li>
+                                <a class="" asp-controller="MealsView" asp-action="Index" asp-route-id="@meal.Id">
+                                    <img src="/upload/@meal.Photo" />
+                                   @Localizer.Get(meal.MealsName)
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                </li>
+                <!-- More categories and items can be added here -->
+            </ul>
+        }
+    </div>
+    <div class="text-center mt-4">
+        <button id="showPrev" style="background-color: #f2745f;" class="btn ">
+            <i class="fa fa-arrow-left"></i>
+        </button>
+        <button id="showNext" style="background-color: #f2745f;" class="btn ">
+            <i class="fa fa-arrow-right"></i>
+        </button>
+    </div>
+
+
+    <h2 class="section-title">@Localizer.Get("Menu") - @Localizer.Get("Items")</h2>
+    <div class="menu-section menu-section1">
+        @{
+            var Categories = db.Categories.Include(x=>x.Products);
+        }
+        @foreach (var category in Categories)
+        {
+            <ul class="menu-items menu-items2">
+                <li class="category">
+                    @Localizer.Get(category.CategoryName)
+                    @foreach (var product in category.Products)
+                    {
+                        <ul class="sub-items ">
+                            <li>
+                                <a asp-controller="ProductView" asp-action="Index" asp-route-id="@product.Id">
+                                    <img src="/upload/@product.Photo" />
+                                    @Localizer.Get(product.ProductName)
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                </li>
+                <!-- More categories and items can be added here -->
+            </ul>
+        }
+       
+    </div>
+    <div class="text-center mt-4" style="margin-bottom:20px;">
+        <button id="showPrev1" style="background-color: #f2745f;" class="btn ">
+            <i class="fa fa-arrow-left"></i>
+        </button>
+        <button id="showNext1" style="background-color: #f2745f;" class="btn ">
+            <i class="fa fa-arrow-right"></i>
+
+        </button>
+    </div>
+</div>
+
+<script>
+    var currentOffset = 0;
+    var itemsPerPage = 4; // عدد العناصر التي تريد عرضها في كل مرة
+
+    // عند الضغط على الزر "Show Next"
+    document.getElementById("showNext").addEventListener("click", function () {
+        var menuItems = document.querySelectorAll(".menu-items1");
+        var maxOffset = Math.ceil(menuItems.length / itemsPerPage) - 1;
+
+        if (currentOffset < maxOffset) {
+            currentOffset++;
+            updateMenuDisplay(menuItems);
+        }
+    });
+
+    // عند الضغط على الزر "Show Previous"
+    document.getElementById("showPrev").addEventListener("click", function () {
+        if (currentOffset > 0) {
+            currentOffset--;
+            var menuItems = document.querySelectorAll(".menu-items1");
+            updateMenuDisplay(menuItems);
+        }
+    });
+
+    // تحديث عرض العناصر في القائمة بناءً على الإزاحة الحالية
+    function updateMenuDisplay(menuItems) {
+        var startIndex = currentOffset * itemsPerPage;
+        var endIndex = startIndex + itemsPerPage;
+
+        // إخفاء جميع العناصر
+        menuItems.forEach(function (item) {
+            item.style.display = "none";
+        });
+
+        // عرض العناصر في النطاق الحالي
+        for (var i = startIndex; i < endIndex && i < menuItems.length; i++) {
+            menuItems[i].style.display = "block";
+        }
+    }
+
+    // تحديث عرض القائمة عند تحميل الصفحة لعرض العناصر الأولى
+    document.addEventListener("DOMContentLoaded", function () {
+        var menuItems = document.querySelectorAll(".menu-items1");
+        updateMenuDisplay(menuItems);
+    });
+</script>
+
+
+<script>
+    var currentOffset = 0;
+    var itemsPerPage = 4; // عدد العناصر التي تريد عرضها في كل مرة
+
+    // عند الضغط على الزر "Show Next"
+    document.getElementById("showNext1").addEventListener("click", function () {
+        var menuItems = document.querySelectorAll(".menu-items2");
+        var maxOffset = Math.ceil(menuItems.length / itemsPerPage) - 1;
+
+        if (currentOffset < maxOffset) {
+            currentOffset++;
+            updateMenuDisplay(menuItems);
+        }
+    });
+
+    // عند الضغط على الزر "Show Previous"
+    document.getElementById("showPrev1").addEventListener("click", function () {
+        if (currentOffset > 0) {
+            currentOffset--;
+            var menuItems = document.querySelectorAll(".menu-items2");
+            updateMenuDisplay(menuItems);
+        }
+    });
+
+    // تحديث عرض العناصر في القائمة بناءً على الإزاحة الحالية
+    function updateMenuDisplay(menuItems) {
+        var startIndex = currentOffset * itemsPerPage;
+        var endIndex = startIndex + itemsPerPage;
+
+        // إخفاء جميع العناصر
+        menuItems.forEach(function (item) {
+            item.style.display = "none";
+        });
+
+        // عرض العناصر في النطاق الحالي
+        for (var i = startIndex; i < endIndex && i < menuItems.length; i++) {
+            menuItems[i].style.display = "block";
+        }
+    }
+
+    // تحديث عرض القائمة عند تحميل الصفحة لعرض العناصر الأولى
+    document.addEventListener("DOMContentLoaded", function () {
+        var menuItems = document.querySelectorAll(".menu-items2");
+        updateMenuDisplay(menuItems);
+    });
+</script>

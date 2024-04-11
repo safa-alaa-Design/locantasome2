@@ -1,0 +1,67 @@
+@using Microsoft.EntityFrameworkCore;
+@using Restaurant.Models;
+@model List<Restaurant.Models.Product>
+@inject ITextLocalizer Localizer
+
+
+@*
+
+*@
+@{
+    Layout = "_myNewLayout";
+}
+<link href="~/cartshoping/css/categorystyle.css" rel="stylesheet" />
+
+
+@if (Model.Any())
+{
+
+
+    <div class="container">
+        <div class="shop_gallery">
+            <div class="row categoriesrow">
+                @foreach (var viewModel in Model)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 column">
+                        <article class="single_product">
+                            <figure>
+                                <div class="product_thumb">
+                                    @if (!string.IsNullOrEmpty(viewModel.Photo))
+                                    {
+                                        <a asp-controller="ProductView" asp-action="Index" asp-route-id="@viewModel.Id"><img style="width:100%;" class="productimg" src="/upload/@viewModel.Photo" alt=""></a>
+                                    }
+                                   
+                                </div>
+
+                                <figcaption class="product_content">
+                                    <h2 class="title">@viewModel.ProductName</h2>
+                                    <h3 class="Category">@viewModel.Category.CategoryName</h3>
+                                    <h3> @viewModel.Price <span class="currency2">@viewModel.Currency</span></h3>
+                                   
+                                    @if (viewModel.PriceBefor != null)
+                                    {
+                                        <span class="cart-price2 cart-header shop-item-price"><s style="color:#800000;">@viewModel.PriceBefor</s> <span class="currency2"><s style="color:#800000;">@viewModel.Currency</s></span></span>
+                                    
+                                    }
+
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+
+}
+
+else
+{
+    <div class="container">
+
+        <p>@Localizer.Get("No products found")</p>
+    </div>
+}
+

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../Modules/Membership/AccountPanelTitle.tsx"],
+  "sourcesContent": ["/** @jsxImportSource jsx-dom */\n\nimport { localText } from \"@serenity-is/corelib\";\n\nexport const AccountPanelTitle = () =>\n    <h2 class=\"text-center p-4\">\n        <img class=\"s-site-logo-img s-form-title-logo\" /> {localText(\"Forms.SiteTitle\")}\n    </h2>"],
+  "mappings": "8FAEA,IAAAA,EAA0B,SAEnB,IAAMC,EAAoBC,EAAA,IAC7BC,EAAC,MAAG,MAAM,kBACN,UAAAA,EAAC,OAAI,MAAM,oCAAoC,EAAE,OAAE,aAAU,iBAAiB,GAClF,EAH6B",
+  "names": ["import_corelib", "AccountPanelTitle", "__name", "jsx"]
+}

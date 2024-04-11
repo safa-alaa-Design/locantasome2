@@ -1,0 +1,71 @@
+.mini_cart {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: none;
+  z-index: 9999;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 75vh;
+}
+.mini_cart_close{
+        position: absolute;
+    right: 16px;
+    top: 20px;
+}
+.mini_cart.active {
+  display: block;
+}
+
+.cart_gallery {
+  padding: 10px;
+}
+
+.cart_close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+  .cart_close h3 {
+    margin: 0;
+  }
+
+.cart-items {
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-total {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-total-title {
+  font-weight: bold;
+}
+
+.cart-total-price {
+  font-size: large;
+  font-weight: bolder;
+}
+/* أسلوب تحديد الأيقونة "X" */
+.mini_cart_close i {
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+}
+
+/* تغيير لون الأيقونة "X" عند التحويم عليها */
+.mini_cart_close i:hover {
+    color: #000;
+}
+
+

@@ -1,0 +1,233 @@
+
+.container {
+  padding: 20px;
+}
+
+.shop_gallery {
+  margin-top: 20px;
+}
+
+/* تنسيق العنصر الفردي */
+.single_product {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 334px;
+  box-sizing: content-box;
+  padding-bottom: 10px;
+}
+
+/* تنسيق الصورة */
+.product_thumb img {
+  width: 100%;
+  height: 233px;
+  display: block;
+}
+
+/* تنسيق عنوان الصنف */
+.Category {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* تنسيق اسم المنتج */
+.title {
+  font-size: 14px;
+  color: #474545;
+}
+
+/* تنسيق السعر */
+.h3 {
+  font-size: 16px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* تنسيق السعر السابق */
+.cart-price2 s {
+  color: red;
+}
+
+.product_content {
+  margin-left: 12px;
+}
+
+h2, h3, h6 {
+  margin-top: 12px;
+  margin-bottom: -6px;
+}
+
+.title2 {
+  color: #777;
+  font-size: 13px;
+}
+
+.column {
+  width: 25%;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 549px) {
+  .column {
+    width: 24%;
+    margin-right: 45px;
+  }
+  .categoriesrow {
+    width: 105%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product_thumb img {
+    height: 125px;
+  }
+  .currency2 {
+    font-size: 16px;
+  }
+  .cart-price2 {
+    font-size: 16px;
+    position: relative;
+    left: 48px;
+    bottom: 15px;
+  }
+    h3 {
+    font-size: 16px;
+  }
+  .single_product {
+    height: 225px;
+    width: 168%;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 767px) {
+  .column {
+    width: 32%;
+  }
+
+  .categoriesrow {
+    width: 105%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product_thumb img {
+    height: 186px;
+  }
+
+  .single_product {
+    height: 295px;
+  }
+}
+
+  @media only screen and (min-width: 369px) and (max-width: 400px) {
+    .column {
+      width: 26%;
+      margin-right: 30px;
+      margin-left:30px;
+    }
+
+    .categoriesrow {
+      width: 105%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product_thumb img {
+      height: 95px;
+    }
+
+    .currency2 {
+      font-size: 14px;
+    }
+
+    .cart-price2 {
+      font-size: 14px;
+      position: relative;
+      left: 41px;
+      bottom: 12px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+
+    .single_product {
+      height: 180px;
+      width: 168%;
+    }
+ }
+@media only screen and (min-width: 280px) and (max-width: 369px) {
+  .column {
+    width: 26%;
+    margin-right: 62px;
+  }
+
+  .categoriesrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .product_thumb img {
+    height: 95px;
+  }
+
+  .currency2 {
+    font-size: 14px;
+  }
+
+  .cart-price2 {
+    font-size: 14px;
+    position: relative;
+    left: 41px;
+    bottom: 12px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  .single_product {
+    height: 180px;
+    width: 225%;
+  }
+}
+@media (max-width: 280px) {
+  .column {
+    width: 32%;
+    margin-right: 53px;
+  }
+  .categoriesrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .single_product {
+    height: 180px;
+    width: 225%;
+  }
+  .product_thumb img {
+    height: 95px;
+  }
+
+  .currency2 {
+    font-size: 14px;
+  }
+
+  .cart-price2 {
+    font-size: 14px;
+    position: relative;
+    left: 41px;
+    bottom: 12px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  }
+

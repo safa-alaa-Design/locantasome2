@@ -1,0 +1,62 @@
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.EntityFrameworkCore
+@using Newtonsoft.Json
+@using Restaurant.Models
+@model List<Restaurant.ModelView.ModelseView>
+@inject ITextLocalizer Localizer
+
+
+@{
+    Layout = "_myNewLayout";
+}
+<link href="~/cartshoping/css/searchstyle.css" rel="stylesheet" />
+@foreach (var viewModel in Model)
+{
+
+
+    <div class="Header18styled__HeaderContent-sc-v3bfl1-3 fBPOQq product_card">
+        <img class="shop-item-image product_image" id="main-img" src="/upload/@viewModel.MainPhoto" alt="Product Image">
+        <div class="dev product_details">
+            <div class="product_details_title">
+                <h2 class="shop-item-category product_category">@Localizer.Get(viewModel.Category.CategoryName)</h2>
+                <h4 class="shop-item-name product_name">@Localizer.Get(viewModel.ProductName)</h4>
+            </div>
+            <div class="product_desc">
+                <p>@Localizer.Get(viewModel.Description)</p>
+                @foreach (var brand in ViewBag.Brands)
+                {
+                    @if (@brand.PhoneNember== null)
+                    {
+                        <p class="shop-item-tel product_description" style="display:none;">0</p>
+                                        
+    }else{
+                    <p class="shop-item-tel product_description" style="display:none;">@brand.PhoneNember</p>
+    }
+                }
+            </div>
+        </div>
+        <div class="shop-item-details">
+            <h3 class="shop-item-price product_price">@viewModel.Price <span class="shop-item-currency currency">@viewModel.Currency</span></h3>
+            
+            @if (viewModel.PriceBefor != null)
+            {
+                <span class="current_price cart-header"><s style="color:#800000;">@viewModel.PriceBefor</s> <span class="currency2" style="color:#800000;">@viewModel.Currency</span></span>
+                
+            }
+            <div style="margin:0" class="product_variant_quantity d-flex align-items-center bottundiv">
+                @if (User.IsLoggedIn())
+                {
+                    <button class="btn shop-item-button" type="button">@Localizer.Get("Add To Cart")</button>
+                }
+                else
+                {
+                    <a class="btn shop-item-button" href="~/Account/SignUp" type="button">@Localizer.Get("Add To Cart")</a>
+                }
+            </div>
+        </div>
+    </div>
+
+}
+<!-- product details css end -->
+<!--product info start-->
+<script src="~/cartshoping/cartjs.js"></script>
