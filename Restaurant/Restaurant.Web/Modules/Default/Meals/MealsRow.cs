@@ -24,11 +24,13 @@ public sealed class MealsRow : Row<MealsRow.RowFields>, IIdRow, INameRow
 
     [DisplayName("Description")]
     public string Description { get => fields.Description[this]; set => fields.Description[this] = value; }
+    [DisplayFormat("00.0")]
 
     [DisplayName("Price"), Size(18)]
     public decimal? Price { get => fields.Price[this]; set => fields.Price[this] = value; }
 
     [DisplayName("Price Befor"), Size(18)]
+    [DisplayFormat("00.0")]
     public decimal? PriceBefor { get => fields.PriceBefor[this]; set => fields.PriceBefor[this] = value; }
 
     [DisplayName("Currency"), Size(50)]

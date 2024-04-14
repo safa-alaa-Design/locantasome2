@@ -1,10 +1,10 @@
-﻿namespace Restaurant.Administration.Columns;
+namespace Restaurant.Administration.Columns;
 
 [ColumnsScript("Administration.User")]
 [BasedOnRow(typeof(UserRow), CheckNames = true)]
 public class UserColumns
 {
-    [EditLink, AlignRight, Width(55)]
+    [EditLink, Width(55)]
     public string UserId { get; set; }
     [EditLink, Width(150)]
     public string Username { get; set; }

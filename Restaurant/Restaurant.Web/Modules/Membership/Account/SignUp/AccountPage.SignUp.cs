@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.DataProtection;
 using Restaurant.Administration;
 using Restaurant.Administration.Repositories;
 using System.IO;
@@ -55,7 +55,7 @@ public partial class AccountPage : Controller
                 Email = email,
                 PasswordHash = hash,
                 PasswordSalt = salt,
-                IsActive = 0,
+                IsActive = 1,
                 InsertDate = DateTime.Now,
                 InsertUserId = 1,
                 LastDirectoryUpdate = DateTime.Now

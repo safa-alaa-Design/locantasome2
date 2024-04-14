@@ -8,7 +8,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <EncryptedPassword>
     </EncryptedPassword>
     <_PublishTargetUrl>ftp://Restaurant.somee.com/www.Restaurant.somee.com</_PublishTargetUrl>
-    <History>True|2024-04-09T22:22:04.6016629Z;False|2024-04-09T04:46:19.3913790+03:00;True|2024-04-09T03:20:32.6924614+03:00;</History>
+    <History>True|2024-04-12T13:22:05.1647857Z;True|2024-04-10T01:22:04.6016629+03:00;False|2024-04-09T04:46:19.3913790+03:00;True|2024-04-09T03:20:32.6924614+03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -184,16 +184,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/13/2022 12:50:40</publishTime>
     </File>
     <File Include="Restaurant.Web.deps.json">
-      <publishTime>04/09/2024 22:53:22</publishTime>
+      <publishTime>04/12/2024 15:34:32</publishTime>
     </File>
     <File Include="Restaurant.Web.dll">
-      <publishTime>04/09/2024 22:53:18</publishTime>
+      <publishTime>04/12/2024 15:34:28</publishTime>
     </File>
     <File Include="Restaurant.Web.exe">
-      <publishTime>04/09/2024 22:53:18</publishTime>
+      <publishTime>04/12/2024 15:34:28</publishTime>
     </File>
     <File Include="Restaurant.Web.pdb">
-      <publishTime>04/09/2024 22:53:18</publishTime>
+      <publishTime>04/12/2024 15:34:28</publishTime>
     </File>
     <File Include="Restaurant.Web.runtimeconfig.json">
       <publishTime>04/09/2024 02:37:00</publishTime>
@@ -265,7 +265,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/05/2016 07:57:34</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>04/09/2024 22:53:24</publishTime>
+      <publishTime>04/12/2024 15:34:34</publishTime>
     </File>
     <File Include="wwwroot/cartshoping/cartjs.js">
       <publishTime>04/09/2024 05:28:03</publishTime>
@@ -283,7 +283,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/08/2024 23:02:49</publishTime>
     </File>
     <File Include="wwwroot/cartshoping/css/SearchStyle.css">
-      <publishTime>04/09/2024 05:41:55</publishTime>
+      <publishTime>04/12/2024 15:03:38</publishTime>
     </File>
     <File Include="wwwroot/Content/serenity/images/32px.png">
       <publishTime>12/22/2023 00:14:09</publishTime>
@@ -550,130 +550,130 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/22/2023 00:14:09</publishTime>
     </File>
     <File Include="wwwroot/Content/site/site.css">
-      <publishTime>04/09/2024 02:05:49</publishTime>
+      <publishTime>04/11/2024 16:23:38</publishTime>
     </File>
     <File Include="wwwroot/Content/site/site.htmlcontent.css">
       <publishTime>04/09/2024 01:33:08</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Administration/Language/LanguagePage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Administration/Language/LanguagePage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Administration/Role/RolePage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Administration/Role/RolePage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Administration/Translation/TranslationPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Administration/Translation/TranslationPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Administration/User/UserPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Administration/User/UserPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Common/ScriptInit.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Common/ScriptInit.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Brand/BrandPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Brand/BrandPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Category/CategoryPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Category/CategoryPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/CategoryMeals/CategoryMealsPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/CategoryMeals/CategoryMealsPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Item/ItemPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Item/ItemPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Meals/MealsPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Meals/MealsPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Product/ProductPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Default/Product/ProductPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Membership/Account/Login/LoginPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Membership/Account/Login/LoginPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Membership/Account/SignUp/SignUpPage.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/Modules/Membership/Account/SignUp/SignUpPage.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-CFICWFWM.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-CFICWFWM.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-CQUPKDYH.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-CQUPKDYH.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-HILD355U.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-HILD355U.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-HR54EQNX.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-HR54EQNX.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-HS2I4OYX.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-HS2I4OYX.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-PFLMZDFA.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-PFLMZDFA.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-YJXLW3ZO.js">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/esm/_chunks/chunk-YJXLW3ZO.js.map">
-      <publishTime>04/09/2024 22:53:21</publishTime>
+      <publishTime>04/12/2024 15:34:31</publishTime>
     </File>
     <File Include="wwwroot/favicon.ico">
       <publishTime>12/22/2023 00:14:09</publishTime>

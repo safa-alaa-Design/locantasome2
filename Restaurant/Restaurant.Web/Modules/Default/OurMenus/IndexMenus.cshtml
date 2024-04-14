@@ -34,7 +34,8 @@
                             <li>
                                 <a class="" asp-controller="MealsView" asp-action="Index" asp-route-id="@meal.Id">
                                     <img src="/upload/@meal.Photo" />
-                                   @Localizer.Get(meal.MealsName)
+
+                                    @Localizer.Get(meal.MealsName) --------------- @meal.Price&nbsp;@meal.Currency
                                 </a>
                             </li>
                         </ul>
@@ -70,7 +71,7 @@
                             <li>
                                 <a asp-controller="ProductView" asp-action="Index" asp-route-id="@product.Id">
                                     <img src="/upload/@product.Photo" />
-                                    @Localizer.Get(product.ProductName)
+                                    @Localizer.Get(product.ProductName) --------------- @product.Price&nbsp;@product.Currency
                                 </a>
                             </li>
                         </ul>
@@ -94,7 +95,7 @@
 
 <script>
     var currentOffset = 0;
-    var itemsPerPage = 4; // عدد العناصر التي تريد عرضها في كل مرة
+    var itemsPerPage = 3; // عدد العناصر التي تريد عرضها في كل مرة
 
     // عند الضغط على الزر "Show Next"
     document.getElementById("showNext").addEventListener("click", function () {
@@ -142,7 +143,7 @@
 
 <script>
     var currentOffset = 0;
-    var itemsPerPage = 4; // عدد العناصر التي تريد عرضها في كل مرة
+    var itemsPerPage = 3; // عدد العناصر التي تريد عرضها في كل مرة
 
     // عند الضغط على الزر "Show Next"
     document.getElementById("showNext1").addEventListener("click", function () {

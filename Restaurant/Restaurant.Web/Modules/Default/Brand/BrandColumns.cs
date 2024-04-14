@@ -7,7 +7,7 @@ namespace Restaurant.Default.Columns;
 [BasedOnRow(typeof(BrandRow), CheckNames = true)]
 public class BrandColumns
 {
-    [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+    [EditLink, DisplayName("Db.Shared.RecordId")]
     public int Id { get; set; }
     [EditLink]
     public string BrandName { get; set; }

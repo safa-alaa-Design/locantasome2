@@ -23,13 +23,13 @@ public sealed class ProductRow : Row<ProductRow.RowFields>, IIdRow, INameRow
 
     [DisplayName("Description")]
     public string Description { get => fields.Description[this]; set => fields.Description[this] = value; }
-
+    [DisplayFormat("00.0")]
     [DisplayName("Price"), Size(18)]
     public decimal? Price { get => fields.Price[this]; set => fields.Price[this] = value; }
 
     [DisplayName("Currency"), Size(50)]
     public string Currency { get => fields.Currency[this]; set => fields.Currency[this] = value; }
-
+    [DisplayFormat("00.0")]
     [DisplayName("Price Befor"), Size(18)]
     public decimal? PriceBefor { get => fields.PriceBefor[this]; set => fields.PriceBefor[this] = value; }
 

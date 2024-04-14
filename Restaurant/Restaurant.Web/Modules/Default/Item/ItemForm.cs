@@ -6,8 +6,13 @@ namespace Restaurant.Default.Forms;
 [BasedOnRow(typeof(ItemRow), CheckNames = true)]
 public class ItemForm
 {
+    [Required]
     public string ItemName { get; set; }
+    [Required]
+
     public string Photo { get; set; }
     public string Description { get; set; }
+    [Required]
+
     public int MealsId { get; set; }
 }

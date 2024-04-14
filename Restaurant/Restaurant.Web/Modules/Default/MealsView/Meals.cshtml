@@ -90,6 +90,7 @@
                     <img style="width:100%; height: auto;" class="productimgbig shop-item-image" src="/upload/@meal.Photo" alt="">
                     <div class="product_content product_details">
                         <h3 class="Categoryitem shop-item-category">@meal.MealsName</h3>
+                        <h4 class="shop-item-name" style="display:none;">+@Localizer.Get("Meal ingredients")</h4>
                         @foreach (var brand in ViewBag.Brands)
                         {
                             <p class="shop-item-tel product_description" style="display:none;">@brand.PhoneNember</p>
@@ -112,7 +113,9 @@
                                     }
                                 </div>
                                 <figcaption class="product_content">
-                                <h2 class="title shop-item-name">@Localizer.Get(viewModel.ItemName)</h2>
+                                  
+                                <h2 class="title">@Localizer.Get(viewModel.ItemName)</h2>
+                               
                              
                                 <h6 class="title2">@Localizer.Get(viewModel.Description)</h6>
                                 </figcaption>

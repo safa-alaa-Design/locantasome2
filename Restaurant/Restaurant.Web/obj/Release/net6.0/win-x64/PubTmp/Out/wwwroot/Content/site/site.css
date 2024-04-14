@@ -320,3 +320,6 @@
   .s-PermissionCheckEditor .effective-permission.deny {
     background-image: url(../serenity/images/slash.png);
   }
+.categories{
+    height:auto;
+}

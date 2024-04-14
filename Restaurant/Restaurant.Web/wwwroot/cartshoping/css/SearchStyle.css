@@ -238,6 +238,7 @@
   bottom: 8px;
   left: 70px;
   font-size: 23px;
+  width: 140px;
 }
 .productimgbig {
   width: 100%;
@@ -273,7 +274,7 @@
   top: 23px;
   font-size: 25px;
   left: 6px;
-
+  width: 67px;
 }
 @media only screen and (min-width: 767px) and (max-width: 992px) {
   .productimgbig {

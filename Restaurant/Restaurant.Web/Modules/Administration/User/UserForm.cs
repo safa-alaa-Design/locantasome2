@@ -1,4 +1,4 @@
-﻿namespace Restaurant.Administration.Forms;
+namespace Restaurant.Administration.Forms;
 
 [FormScript("Administration.User")]
 [BasedOnRow(typeof(UserRow), CheckNames = true)]
@@ -18,5 +18,6 @@ public class UserForm
     public string PasswordConfirm { get; set; }
     [OneWay]
     public string Source { get; set; }
+    [DefaultValue(true)]
     public bool IsActive { get; set; }
 }

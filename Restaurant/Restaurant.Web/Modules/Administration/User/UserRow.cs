@@ -38,9 +38,11 @@ public sealed class UserRow : Serenity.Extensions.Entities.LoggingRow<UserRow.Ro
 
     [DisplayName("Activated"), NotNull, Insertable(false), Updatable(true)]
     [DefaultValue(true)]
+    [DisplayFormat("true")]
     public short? IsActive { get => fields.IsActive[this]; set => fields.IsActive[this] = value; }
 
     [DisplayName("Confirm Password"), Size(50), NotMapped]
+    [DefaultValue(true)]
     public string PasswordConfirm { get => fields.PasswordConfirm[this]; set => fields.PasswordConfirm[this] = value; }
 
     [DisplayName("Last Directory Update"), Insertable(false), Updatable(false)]
